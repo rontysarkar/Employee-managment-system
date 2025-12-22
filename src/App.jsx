@@ -2,14 +2,13 @@ import Login from './components/Auth/Login'
 import EmployeeDashboard from './components/Dashboard/EmployeeDashboard'
 import AdminDashboard from './components/Dashboard/AdminDashboard'
 import { useContext, useEffect, useState } from 'react'
-import { getLocalStorage, setLocalStorage } from './utils/localStorage'
 import { AuthContext } from './context/AuthProvider'
 
 const App = () => {
 
   const [user, setUser] = useState(null)
   const [loggedInUserData, setLoggedInUserData] = useState(null)
-  const authData = useContext(AuthContext)
+  const [userData,setUserData] = useContext(AuthContext)
 
   useEffect(()=>{
     const loggedInUser = localStorage.getItem('loggedInUser')
@@ -23,16 +22,14 @@ const App = () => {
  
   const loginHandler = (email, password) => {
     if (email == "admin@gmail.com" && password == 12) {
-      const admin = authData.admin.find((e) => e.email == email && e.password == password)
-      if (admin) {
-        setLoggedInUserData(admin)
+      
+        setLoggedInUserData("admin")
         setUser("admin")
-        localStorage.setItem("loggedInUser", JSON.stringify({ role: "admin",data : admin }))
+        localStorage.setItem("loggedInUser", JSON.stringify({ role: "admin"}))
         
-      }
     }
-    else if (authData && authData.employees.find((e) => e.email == email && e.password == password)) {
-      const employee = authData.employees.find((e) => e.email == email && e.password == password)
+    else if (userData && userData.find((e) => e.email == email && e.password == password)) {
+      const employee = userData.find((e) => e.email == email && e.password == password)
       if (employee) {
         setLoggedInUserData(employee)
         setUser("employee")
@@ -48,7 +45,7 @@ const App = () => {
   return (
     <>
       {!user ? <Login loginHandler={loginHandler} /> : ''}
-      {user == "admin" ? <AdminDashboard data={loggedInUserData}  /> : user == "employee" ? <EmployeeDashboard data={loggedInUserData} /> : null}
+      {user == "admin" ? <AdminDashboard loginUser={setUser}  /> : user == "employee" ? <EmployeeDashboard loginUser={setUser}  data={loggedInUserData} /> : null}
 
     </>
   )

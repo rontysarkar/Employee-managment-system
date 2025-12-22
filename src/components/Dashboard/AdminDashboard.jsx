@@ -3,10 +3,10 @@ import Header from '../other/Header'
 import CreateTask from '../other/CreateTask'
 import AllTask from '../other/AllTask'
 
-const AdminDashboard = ({data}) => {
+const AdminDashboard = (props) => {
     return (
         <div className='p-10'>
-            <Header data={{firstName : "Admin"}} />
+            <Header loginUser = {props.loginUser} data={{firstName : "Admin"}} />
            <CreateTask/>
            <AllTask/>
         </div>
