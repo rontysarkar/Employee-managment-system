@@ -2,10 +2,10 @@ import React, { useContext } from 'react'
 import { AuthContext } from '../../context/AuthProvider'
 
 const AllTask = () => {
-    const [userData, setUserData] = useContext(AuthContext)
+    const {userData} = useContext(AuthContext)
     return (
         <div id='tasklist' className='px-10 py-6 bg-[#1c1c1c]  mt-4'>
-            <div className='bg-orange-400 mb-4 p-3 flex justify-between px-25 rounded text-xl'>
+            <div className='bg-orange-500/90 mb-4 p-3 flex justify-between px-25 rounded text-xl'>
                 <h1>Employee Name</h1>
                 <h2>New Task</h2>
                 <h3>Active Task</h3>

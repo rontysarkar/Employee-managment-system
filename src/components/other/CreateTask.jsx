@@ -8,7 +8,7 @@ const CreateTask = () => {
     const [category, setCategory] = useState('')
     const [taskDescription, setTaskDescription] = useState('')
 
-    const [userData, setUserData] = useContext(AuthContext)
+    const {userData, setUserData} = useContext(AuthContext)
 
 
     const submitHandler = (e) => {

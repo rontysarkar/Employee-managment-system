@@ -3,16 +3,16 @@ import React from 'react'
 const FailedTask = ({data}) => {
   const {category,date,taskDescription,taskTitle} = data
   return (
-    <div className='h-full w-[300px] shrink-0 bg-red-500 rounded-2xl p-5    '>
+    <div className='h-[280px] w-[300px]  shrink-0 bg-rose-500/90 rounded-2xl p-5 flex flex-col   '>
             <div className='flex justify-between items-center mt-3'>
-                <h1 className='bg-red-700 px-4 py-1 rounded-md '>{category}</h1>
+                <h1 className='bg-red-400 text-white px-3 py-1 text-xs rounded-md'>{category}</h1>
                 <h1 className='text-md'>{date}</h1>
             </div>
             <h1 className='text-xl mt-5 font-medium'>{taskTitle}</h1>
             <p className='mt-3'>{taskDescription}</p>
-            <div className='flex  mt-5 '>
+            <div className='flex  mt-auto '>
                 {/* <button className='bg-fuchsia-500 px-2 py-1 text-sm rounded'></button> */}
-                <button className='bg-red-500 px-2 py-1 text-sm rounded  ml-auto'>Failed</button>
+                <button className='bg-red-800 text-white px-3 py-1 text-xs rounded-md ml-auto shadow-lg -translate-y-1 hover:-translate-y-2 hover:shadow-xl transition-all duration-300'>Accepted</button>
             </div>
         </div>
   )

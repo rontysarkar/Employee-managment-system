@@ -5,10 +5,10 @@ const employees = [
     "email": "ronty@gmail.com",
     "password": "123",
     "taskCount": {
-      "active": 2,
+      "active": 1,
       "completed": 1,
       "failed": 1,
-      "newTask": 2
+      "newTask": 1,
     },
     "tasks": [
       {
@@ -20,7 +20,7 @@ const employees = [
         "active": true,
         "completed": false,
         "failed": false,
-        "newTask": true
+        "newTask": false,
       },
       {
         "taskNumber": 2,
@@ -50,7 +50,7 @@ const employees = [
         "taskDescription": "Add styling for footer section",
         "date": "2025-01-16",
         "category": "Frontend",
-        "active": true,
+        "active": false,
         "completed": false,
         "failed": false,
         "newTask": true
@@ -60,13 +60,13 @@ const employees = [
   {
     "id": "E2",
     "firstName": "Sara",
-    "email": "sara@company.com",
-    "password": "sara123",
+    "email": "sara@gmail.com",
+    "password": "123",
     "taskCount": {
       "active": 2,
       "completed": 1,
       "failed": 1,
-      "newTask": 2
+      "newTask": 0
     },
     "tasks": [
       {
@@ -78,7 +78,7 @@ const employees = [
         "active": true,
         "completed": false,
         "failed": false,
-        "newTask": true
+        "newTask": false
       },
       {
         "taskNumber": 2,
@@ -111,17 +111,17 @@ const employees = [
         "active": true,
         "completed": false,
         "failed": false,
-        "newTask": true
+        "newTask": false
       }
     ]
   },
   {
     "id": "E3",
     "firstName": "Alex",
-    "email": "alex@company.com",
-    "password": "alex123",
+    "email": "alex@gmail.com",
+    "password": "123",
     "taskCount": {
-      "active": 2,
+      "active": 0,
       "completed": 1,
       "failed": 1,
       "newTask": 2
@@ -144,7 +144,7 @@ const employees = [
         "taskDescription": "Optimize meta tags",
         "date": "2025-01-11",
         "category": "SEO",
-        "active": true,
+        "active": false,
         "completed": false,
         "failed": false,
         "newTask": true
@@ -166,7 +166,7 @@ const employees = [
         "taskDescription": "Upload weekly blog post",
         "date": "2025-01-18",
         "category": "Content",
-        "active": true,
+        "active": false,
         "completed": false,
         "failed": false,
         "newTask": true
@@ -183,7 +183,7 @@ const admin = [
   {
     "id": "A1",
     "email": "admin@gmail.com",
-    "password": "12"
+    "password": "123"
   }
 ]
 

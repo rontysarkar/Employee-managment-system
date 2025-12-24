@@ -7,33 +7,32 @@ import { AuthContext } from './context/AuthProvider'
 const App = () => {
 
   const [user, setUser] = useState(null)
-  const [loggedInUserData, setLoggedInUserData] = useState(null)
-  const [userData,setUserData] = useContext(AuthContext)
+  const { userData, loggedInUserData, setLoggedInUserData } = useContext(AuthContext)
 
-  useEffect(()=>{
+  useEffect(() => {
     const loggedInUser = localStorage.getItem('loggedInUser')
-    if(loggedInUser)
-    { const newData = JSON.parse(loggedInUser)
+    if (loggedInUser) {
+      const newData = JSON.parse(loggedInUser)
       setUser(newData.role)
       setLoggedInUserData(newData.data)
     }
 
-  },[])
- 
+  }, [])
+
   const loginHandler = (email, password) => {
     if (email == "admin@gmail.com" && password == 12) {
-      
-        setLoggedInUserData("admin")
-        setUser("admin")
-        localStorage.setItem("loggedInUser", JSON.stringify({ role: "admin"}))
-        
+
+      setLoggedInUserData("admin")
+      setUser("admin")
+      localStorage.setItem("loggedInUser", JSON.stringify({ role: "admin" }))
+
     }
     else if (userData && userData.find((e) => e.email == email && e.password == password)) {
       const employee = userData.find((e) => e.email == email && e.password == password)
       if (employee) {
         setLoggedInUserData(employee)
         setUser("employee")
-        localStorage.setItem("loggedInUser", JSON.stringify({ role: "employee", data :employee }))
+        localStorage.setItem("loggedInUser", JSON.stringify({ role: "employee", data: employee }))
       }
 
     } else {
@@ -45,7 +44,7 @@ const App = () => {
   return (
     <>
       {!user ? <Login loginHandler={loginHandler} /> : ''}
-      {user == "admin" ? <AdminDashboard loginUser={setUser}  /> : user == "employee" ? <EmployeeDashboard loginUser={setUser}  data={loggedInUserData} /> : null}
+      {user == "admin" ? <AdminDashboard loginUser={setUser} /> : user == "employee" ? <EmployeeDashboard loginUser={setUser} data={loggedInUserData} /> : null}
 
     </>
   )
