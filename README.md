@@ -1,16 +1,65 @@
-# React + Vite
+# 🧑‍💼 Employees Management System (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully functional **Employees Management System** built with **React.js**, where an **Admin** can assign tasks and **Employees** can accept, complete, or fail tasks.  
+This project uses **Browser LocalStorage** as a temporary database (no backend).
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Key Features
 
-## React Compiler
+### 👨‍💼 Admin Panel
+- Admin can login securely
+- Create & assign tasks to employees
+- View all employees and their task status
+- Manage task progress (Pending / Completed / Failed)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 👨‍💻 Employee Panel
+- Employee login system
+- View assigned tasks
+- Accept tasks
+- Mark tasks as **Completed** or **Failed**
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🔐 Login Credentials
+
+### 🔑 Admin Login
+- **Email:** admin@gmail.com  
+- **Password:** 123  
+
+### 👥 Employee Logins
+| Name | Email | Password |
+|------|-------|----------|
+| Ronty | ronty@gmail.com | 123 |
+| Sara | sara@gmail.com | 123 |
+| Alex | alex@gmail.com | 123 |
+
+---
+
+## 🧠 Data Management
+
+- All data is stored in **Browser LocalStorage**
+- No backend or database is used
+- Data resets if browser storage is cleared
+
+---
+
+## 🛠️ Tech Stack
+
+- **React.js**
+- **JavaScript (ES6+)**
+- **Tailwind CSS**
+- **LocalStorage**
+
+---
+
+## 📂 Project Features Summary
+
+✔ Role-based login (Admin / Employee)  
+✔ Task creation & assignment  
+✔ Task status management (Accept / Complete / Fail)  
+✔ Simple & clean UI  
+✔ Fully functional frontend logic  
+
+---
+
