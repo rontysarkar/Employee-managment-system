@@ -1,10 +1,13 @@
 import React, { useContext } from 'react'
-import  { AuthContext } from '../../context/AuthProvider'
+import { AuthContext } from '../../context/AuthProvider'
+import { CompletedHandler, handleFailed } from '../../utils/helper'
 
-const AcceptTask = ({ data, name }) => {
+const AcceptTask = ({ data, id, idx }) => {
     const { category, date, taskDescription, taskTitle } = data
-    const {userData,setUserData} = useContext(AuthContext)
+    const { setUserData, loggedInUserData, setLoggedInUserData } = useContext(AuthContext)
+    console.log(loggedInUserData)
     
+
     return (
         <div className='h-[280px] w-[300px]  shrink-0 bg-violet-500/90 rounded-2xl p-5 flex flex-col   '>
             <div className='flex justify-between items-center mt-3'>
@@ -14,9 +17,12 @@ const AcceptTask = ({ data, name }) => {
             <h1 className='text-xl mt-5 font-medium'>{taskTitle}</h1>
             <p className='mt-3'>{taskDescription}</p>
             <div className='flex justify-between mt-auto '>
-                <button
-                    className='bg-purple-700 text-white px-3 py-1 text-xs rounded-md shadow-lg -translate-y-1 hover:-translate-y-2 hover:shadow-xl transition-all duration-300'>Complated</button>
-                <button className='bg-purple-700 text-white px-3 py-1 text-xs rounded-md shadow-lg -translate-y-1 hover:-translate-y-2 hover:shadow-xl transition-all duration-300'>Failed</button>
+                <button onClick={()=>{
+                    CompletedHandler(setUserData, setLoggedInUserData, id, idx, 'active')
+                }} className='bg-purple-700 text-white px-3 py-1 text-xs rounded-md shadow-lg -translate-y-1 hover:-translate-y-2 hover:shadow-xl transition-all duration-300'>Completed</button>
+                <button onClick={() => {
+                    handleFailed(setUserData, setLoggedInUserData, id, idx, 'active')
+                }} className='bg-purple-700 text-white px-3 py-1 text-xs rounded-md shadow-lg -translate-y-1 hover:-translate-y-2 hover:shadow-xl transition-all duration-300'>Failed</button>
             </div>
         </div>
     )
