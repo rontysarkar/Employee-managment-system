@@ -20,7 +20,7 @@ const App = () => {
   }, [])
 
   const loginHandler = (email, password) => {
-    if (email == "admin@gmail.com" && password == 12) {
+    if (email == "admin@gmail.com" && password == 123) {
 
       setLoggedInUserData("admin")
       setUser("admin")
